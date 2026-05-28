@@ -20,6 +20,7 @@ echo ""
 echo "Memory Usage:"
 free -h
 
+echo "testing"
 echo ""
 echo "Disk Usage:"
 df -h /
