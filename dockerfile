@@ -1,7 +1,13 @@
-FROM ubuntu:24.04
+FROM python:3.12-slim
 
-COPY monitor.sh /monitor.sh
+WORKDIR /app
 
-RUN chmod +x /monitor.sh
+COPY requirements.txt .
 
-CMD ["bash", "/monitor.sh"]
+RUN pip install -r requirements.txt
+
+COPY app.py .
+
+EXPOSE 5000
+
+CMD ["python", "app.py"]
